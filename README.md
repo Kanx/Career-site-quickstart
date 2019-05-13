@@ -23,17 +23,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You'll need an up to date version of [node](https://nodejs.org/en/) and npm or [yarn](https://yarnpkg.com/en/) installed on your machine.
+You'll need an up to date version of [node](https://nodejs.org/en/) and npm (included with node) or [yarn](https://yarnpkg.com/en/) installed on your machine.
+
+Once you've installed node, you'll need a globally installed version of [gulp](https://gulpjs.com/) on your machine:
+
+```
+npm install gulp-cli -g
+```
 
 ### Installing
 
 To get started, run the following commands in your terminal/console:
 
 ```
-git clone https://MattAtRBS@bitbucket.org/caet/career-site-quickstart.git
+git clone https://github.com/Kanx/career-site-quickstart.git
 cd career-site-quickstart
 npm install
 ```
+Once 
 
 ## Development environment
 
