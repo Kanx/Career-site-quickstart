@@ -40,7 +40,7 @@ git clone https://github.com/Kanx/career-site-quickstart.git
 cd career-site-quickstart
 npm install
 ```
-Once 
+Once the dependencies have installed, run `gulp` and you're good to go! 
 
 ## Development environment
 
