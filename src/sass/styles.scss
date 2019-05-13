@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "setup";
+@import "components/index";
+@import "sections/index";
+
+:root {
+  font-size: 16px;
+}
+
+html {
+  font-family: sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  position: relative;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  background: white;
+  overflow: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid #f7f7f7;
+  margin: 30px 0;
+}
+

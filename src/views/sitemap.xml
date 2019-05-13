@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>{{root_url}}/</loc>
+        <lastmod>2019-05-09</lastmod>
+    </url>
+    {{ 'q=&per_page=100000&search_type=talemetry' | job_query | assign_to: 'all_jobs' }}
+    {% for job in all_jobs %}
+    <url>
+        <loc>{{root_url}}{{job.url}}</loc>
+        <lastmod>{{job.updated_at | date:'%Y-%m-%d'}}</lastmod>
+    </url>
+    {% endfor %}
+</urlset>
+
+

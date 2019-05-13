@@ -1,0 +1,86 @@
+{% if request_protocal == 'http://' %}
+    {% capture secure_url %}{{ root_url | replace: 'http://','https://' | replace: '.com/','.com' }}{{ request_fullpath }}{% endcapture %}
+    {% redirect_permanent secure_url %}
+{% else %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!-- TODO: Add cookie consent -->
+        <!-- TODO: Re-add GTM and create new GA property -->
+        <!-- TODO: Review meta tags -->
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="{% meta_description %}"/>
+        <meta name="keywords" content="{% meta_keywords %}"/>
+
+        <!-- OG settings -->
+        <meta property="og:image" content=""/>
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:site" content="" />
+
+        {% if template.permalink contains 'jobs-' %}
+            <meta property="og:title" content="{{ job.title }}"/>
+            <meta property="og:description" content="{{ job.description | strip_html | text_from_html |   truncate: 200 }}"/>
+            <meta property="og:url" content="{{ root_url }}{{ job.url }}"/>
+            <meta name="twitter:title" content="{{ job.title }}" />
+            <meta name="twitter:description" content="{{ job.description | strip_html |  text_from_html |  replace:'The Requirements', '' | replace:'The Business' | truncate: 200 }}" />
+        {% else %}
+            <meta property="og:title" content="{{ page.title }}"/>
+            <meta property="og:description" content="{% meta_description %}"/>
+            <meta property="og:url" content="{{ root_url }}"/>
+            <meta name="twitter:title" content="{{ page.title }}" />
+            <meta name="twitter:description" content="{% meta_description %}" />
+        {% endif %}
+
+        <title>{% careersites_required_title %}</title>
+        <!-- Favicon settings -->
+        <link rel="apple-touch-icon" sizes="180x180" href="">
+        <link rel="icon" type="image/png" sizes="32x32" href="">
+        <link rel="icon" type="image/png" sizes="16x16" href="">
+
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+        <script src="/system/production/assets/39939/original/html5shiv.js"></script>
+        <script src="/system/production/assets/22102/original/selectivizr-min.js"></script>
+        <script src="/system/production/assets/21901/original/respond.min.js"></script>
+        <![endif]-->
+
+        {% if __dev %}
+            <link rel="stylesheet" href="/css/styles.css">
+            <script src="/js/main.min.js" async></script>
+        {% endif %}
+        {% careersites_required_head_tags %}
+
+        <script>
+            dataLayer = [];
+        </script>
+    </head>
+    <body>
+    {% careersites_required_header %}
+        <main id="main">
+            <h1>Career Site quickstart</h1>
+            <h2>Useful links</h2>
+            <ul>
+                <li><a href="">Career Site quickstart guide</a></li>
+                <li><a href="">Career site components</a></li>
+                <li><a href="">Talemetry developer docs</a></li>
+            </ul>
+        </main>
+    <style>
+        main {
+            margin: auto;
+            max-width:750px;
+            padding: 3rem 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-xVVam1KS4+Qt2OrFa+VdRUoXygyKIuNWUUUBZYv+n27STsJ7oDOHJgfF0bNKLMJF" crossorigin="anonymous">
+    </body>
+    {% careersites_required_footer %}
+    </html>
+{% endif %}

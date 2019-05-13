@@ -1,0 +1,17 @@
+.hidden {
+  @include media('<tablet'){
+    &--xs {
+      display: none !important;
+    }
+  }
+  @include media('<desktop'){
+    &--sm {
+      display: none !important;
+    }
+  }
+  @include media('<wide'){
+    &--md {
+      display: none !important;
+    }
+  }
+}

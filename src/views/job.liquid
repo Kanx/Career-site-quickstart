@@ -1,0 +1,59 @@
+{% page_required_header %}
+<div class="job-page page-content">
+    <article>
+        <header class="job-page__hero">
+            <div class="job-page__heading">
+                <h1 class="job-page__title">{{  job.title }}</h1>
+                <div class="job-page__location">{{ job.location.locality }}, {{ job.location.country }}</div>
+                <div class="job-page__reference">{{ job.cfdisplay_JobIDDisplay }}</div>
+                <div class="job-page__apply job-page__apply--top btn btn--rounded btn--yellow btn--inline">
+                    {% if job.active? %}
+                        {{ job | link_to_apply: "Apply for this job" }}
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <section class="job-page__description">
+            {{ job.description | replace:'<p><b>The Requirements</b> </p>', '' | replace:'<p><b>The Business</b> </p>', ''}}
+             <div class="job-page__apply job-page__apply--bottom ">
+                <div tabindex="0" class="job-page__apply-btn btn btn--rounded btn--yellow btn--inline" onclick="javascript:document.getElementsByClassName('cs_item_apply_button_link')[0].click();">Apply for this job</div>
+            </div>
+        </section>
+    </article>
+</div>
+<script type="application/ld+json"> {
+    "@context": "http://schema.org/",
+    "@type": "JobPosting",
+    "url": "https://jobs.bo.money{{ job.url }}",
+    "datePosted": "{{ job.cfdisplay_ExternalPostingStartDate | date: '%Y-%m-%d' | escape_javascript }}",
+    "description": "{{ job.description | replace:'<p><b>The Requirements</b> </p>', '' | replace:'<p><b>The Business</b> </p>', '' |replace: '"', '\"' | strip_newline }}",
+    "employmentType": "{% if job.cfdisplay_fullpart contains 'Full-' %}FULL_TIME{% else %}PART_TIME{% endif %}",
+    "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Bó",
+        "logo": "https://jobs.bo.money/system/production/assets/163112/original/bo.svg"
+    },
+    "identifier": {
+        "@type": "PropertyValue",
+        "name": "Bó",
+        "value": "{{ job.cfdisplay_JobIDDisplay }}"
+      },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+         {% if job.location.street %}"streetAddress": "{{ job.location.street }}",{% endif %}
+        "addressLocality": "{{ job.location.locality }}",
+        "addressRegion": "{{ job.location.country }}",
+        {% if job.location.postal_code %}"postalCode": "{{ job.location.postal_code }}",{% endif %}
+        "addressCountry": "{{ job.location.country }}"
+      }
+    },
+    "industry": "{{ job.cfdisplay_CST_RBS_JOB_FUNC_A }}",
+    {% if job.cfdisplay_ExternalPostingEndDate %}
+    "validThrough": "{{ job.cfdisplay_ExternalPostingEndDate | date: '%Y-%m-%d' }}",
+    {% endif %}
+    "title": "{{ job.title }}"
+}
+</script>
+{% page_required_footer %}
