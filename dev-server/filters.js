@@ -13,6 +13,9 @@ const filters = {
     replace_global_regex: function (input, regex, replaceWith) {
         var regexObject = new RegExp(regex);
         if (typeof input === String) return input.replace(regexObject, replaceWith);
+    },
+    posts_with_tag: function(input) {
+        return input;
     }
 };
 

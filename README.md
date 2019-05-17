@@ -3,7 +3,7 @@
 
 The objective of this project is to enable developers familiar with Javascript to rapidly set up the boilerplate of a Talemetry career site along with a tested, pre-configured development environment (server and task runners) that support Talemetry-code (outside of a _real_ Talemetry instance).
 
- The main driver being this was to create an environment (as close to a real Talemetry environment as possible) that allows forwards/backwards compatability of the code base between the local and CMS versions of the site.
+ The main driver being this was to create an environment (as close to a real Talemetry environment as possible) that allows forwards/backwards compatibility of the code base between the local and CMS versions of the site.
 
 ## Background
 Our typical workflow for a career site project was to develop a site as much as possible without adding any liquid markup (as this would either be mis-interpreted our just simply break our dev Express server). 
@@ -62,7 +62,6 @@ When a Talemetry version of the site needs to be stood up all assets need to be 
  
  * **Good** ✅ - `/system/production/assets/39939/original/html5shiv.js`
  * **Bad** ❌ - `https://connect.talemetry.com/system/production/assets/39939/original/html5shiv.js`
-
 
 ### Setting up custom routing
 
