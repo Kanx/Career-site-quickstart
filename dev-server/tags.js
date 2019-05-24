@@ -7,6 +7,7 @@ const tags = {
     meta_description:               mockRender,
     meta_keywords:                  mockRender,
     careersites_required_footer:    mockRender,
+    careersites_required_title:     mockRender,
     careersites_required_header:    mockRender,
     careersites_required_head_tags: {
         render: function() {

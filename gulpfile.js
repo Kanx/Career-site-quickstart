@@ -72,12 +72,12 @@ const expressServer = (cb) => {
 		config.args = ['--secure=true']
 	}
 	return nodemon(config)
-	.on('start', function () {
-		if (!called) {
-			called = true;
-			cb();
-		}
-	})
+		.on('start', function () {
+			if (!called) {
+				called = true;
+				cb();
+			}
+		})
 };
 
 const enableProdMode = (done) => {
@@ -104,13 +104,15 @@ const sass = () => {
 			content: ["src/views/**/*.liquid"],
 			whitelistPatterns: [
 				/active$/,
-				/tm_notification_link$/]
+				/tm_notification_link$/,
+				/^cc-/
+			]
 		})))
 		.pipe(gulp.dest(paths.styles.dest))
 };
 
 const js = () => {
-	return gulp.src(['./src/js/main.js'] )
+	return gulp.src([ './src/js/main.js'] )
 		.pipe(concat('main.min.js'))
 		.pipe(gulpif(flags.production, uglify()))
 		.pipe(gulp.dest(paths.scripts.dest))
