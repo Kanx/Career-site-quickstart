@@ -14,8 +14,8 @@ const filters = {
         var regexObject = new RegExp(regex);
         if (typeof input === String) return input.replace(regexObject, replaceWith);
     },
-    posts_with_tag: function(input) {
-        return input;
+    time_ago_in_words: function(i) {
+        return '1 week'
     }
 };
 

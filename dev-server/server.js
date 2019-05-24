@@ -10,9 +10,6 @@ const filters = require('./filters');
 const tags = require('./tags');
 const globals = require('./globals');
 const views = __dirname + '/../src/views';
-const routeMap = require('./route-map');
-
-
 const argv = require('yargs').argv;
 const secure = argv.secure;
 
@@ -60,11 +57,7 @@ const jobs = router.get('/job/:jobs', function (req, res, next) {
 
 const pages = router.get('/pages/:pagename', function (req, res, next) {
     globals.template.permalink = 'page';
-    if(fs.existsSync(`${views}/pages/${req.params.pagename}`)) {
-        globals.template_content = engine.renderFile(`${views}/pages/${req.params.pagename}`, globals);
-    } else {
-        globals.template_content = engine.renderFile(routeMap(req.params.pagename), globals);
-    }
+    globals.template_content = engine.renderFile(`${views}/pages/${req.params.pagename}`, globals);
     res.render('index', globals);
 });
 
