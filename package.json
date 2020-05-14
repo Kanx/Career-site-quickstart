@@ -4,13 +4,25 @@
   "private": true,
   "scripts": {
     "start": "npm-run-all --parallel script:*",
+    "wordify": "node ./dev-server/docx.js",
     "script:gulp": "gulp"
   },
+  "dependencies": {
+    "html-docx-js": "^0.3.1",
+    "instafeed.js": "^1.4.1",
+    "js-cookie": "^2.1.4",
+    "scrollreveal": "^4.0.5",
+    "stickybits": "^3.5.2",
+    "uglify-js": "^2.8.22"
+  },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "browser-sync": "^2.26.3",
     "express": "~4.13.1",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-check-unused-css": "^2.1.4",
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.0",
@@ -22,10 +34,13 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "liquidjs": "^8.2.1",
+    "moment": "^2.24.0",
     "nodemon": "^1.18.10",
     "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
     "request": "^2.88.0",
     "serve-favicon": "~2.3.0",
+    "walk": "^2.3.14",
     "yargs": "^13.2.4"
   }
 }

@@ -1,23 +1,23 @@
 const job = {
-    active: true,
-    title: 'Software Engineer',
-    description: `
+  active: true,
+  title: "Software Engineer",
+  description: `
         <h2 class="ng-binding">We're hiring a Data Engineering Technical Lead to join Bó in London</h2><ul>\t<li>This is a chance to take a key role in Bó, a truly innovative, customer-centric digital bank with a start-up culture</li>\t<li>You'll be building&nbsp;a brand new data platform from scratch, creating something which is new, powerful, and free from legacy</li>\t<li>You can expect the opportunity to shape both the parameters of your role,&nbsp;and the team direction and vision</li>\t<li>We offer&nbsp;challenge, support, a flat structure, and the chance to be part of delivering something really special</li></ul><p><b>What you'll do</b></p><p>You'll be leading, motivating, developing and shaping a cross-functional team working with cutting edge big data technology to build our data and analytics platform, delivering customer value at pace and insisting on high quality and simplicity. It's a broad role which will give you the opportunity to oversee the design and performance, but we'll also expect you to be a key hands on contributor with the technologies. The platform will be a cornerstone of Bó's operations and proposition, and your work will be essential to getting us and running to do business.</p><p>Other aspects of your role will include:</p><ul>\t<li>Working&nbsp;with the&nbsp;Chief Data Officer and architecture team&nbsp;to agree the technical roadmap to realise the architectural vision for data capabilities at Bó, while considering the practicalities of delivery</li>\t<li>Playing a lead role in a big data development team with enthusiasm and drive, working in an agile environment</li>\t<li>Mentoring junior members of the team, increasing the team's overall technical capability</li>\t<li>Designing data&nbsp;flows for&nbsp;every significant event for a customer, which then&nbsp;flow into the analytics platform</li>\t<li>Working with solution architects to help shape future solutions, and promote your product’s target vision</li>\t<li>Sharing your technical expertise within the team and across Bó; attending and presenting at conferences and&nbsp;meetups, publishing articles, and&nbsp;contributing to open source projects</li>\t<li>Ensuring all solutions adhere to agreed quality standards, which you will&nbsp;help define</li></ul><p><b>The skills you'll need</b></p><p>We're looking for someone with a blend of skills and experience. You'll be a proven leader capable of shaping and developing a team, with&nbsp;experience in data&nbsp;science, big data or a related&nbsp;area, together with strong technical and&nbsp;coding skills allowing you to combine architecture with design.&nbsp;You'll have strong understanding and experience of machine learning and databases, and&nbsp;experience acting a scrum master. A banking background isn't essential, and an experience in alternative industry such as software consultancy, ecommerce&nbsp;or insurance would be equally welcome, as long as you have experience of moving significant amounts of data, in the order of millions of data points a day.</p><p>You'll also bring:</p><ul>\t<li>A clear focus on customers and quality</li>\t<li>The ability to engage and collaborate with senior stakeholders and other teams</li>\t<li>An active approach to learning, staying up to date with new technology and leadership practices</li></ul><p>Technical skills will be key, so we'll be looking for experience or skills with:</p><ul>\t<li>Programming languages such as Python, SQL, Java, or Scala</li>\t<li>ETL processes such as Apache Airflow</li>\t<li>Messaging, event or streaming technology such as Apache Kafka</li>\t<li>Big data databases, such as AWS Redshift or Postgres</li>\t<li>Terraform for infrastructure as code</li>\t<li>Understsanding loud technologies: Amazon Web Services, Google Cloud Platform</li>\t<li>Large-scale data processing frameworks such as Spark or Hadoop</li>\t<li>Data design, including the logical and physical design of data structures</li>\t<li>Source control, continuous integration and deployment</li>\t<li>Monitoring and alerting in production systems</li></ul><p><b>How we'll reward you</b></p><p>In return, we offer a competitive salary and you'll also join our retirement savings plan. You can also choose from a selection of protection, healthcare or lifestyle extras from RBSelect, our fully flexible reward programme.</p><p>Visit our <a href="http://jobs.rbs.com/pages/reward-and-benefits">reward and benefits page</a> for more information on the benefit packages we offer.</p><p><b>Inclusion</b></p><p class="ng-binding ng-scope">At RBS, we want everyone to feel welcome, regardless of your background or needs. If you need adjustments making to your working environment, we’ll do everything we can to support you. As part of this commitment, we offer flexible working options for some of our roles - <a href="http://jobs.rbs.com/pages/flexible-working">find out more</a>.</p>
     `,
-    location: {
-        locality: 'London',
-        country: 'United Kingdom',
-        street: '1 NatWest Avenue'
-    },
-    workflow_tag: 'GBR001',
-    cfdisplay_JobIDDisplay: 'R000000123',
-    cfdisplay_fullpart: 'Full time',
-    cfval_CST_RBS_BRAND: '',
-    cfdisplay_CST_RBS_BRAND: 'RBS',
-    cfdisplay_ExternalPostingStartDate: new Date(),
-    cfdisplay_ExternalPostingEndDate: new Date(Date.now() + 12096e5),
-    cfval_CST_RBS_JOB_FUNC_A: 'JF19',
-    cfdisplay_CST_RBS_JOB_FUNC_A: 'Technology',
-}
-job['active?'] = true;
+  location: {
+    locality: "London",
+    country: "United Kingdom",
+    street: "1 NatWest Avenue"
+  },
+  workflow_tag: "GBR001",
+  cfdisplay_JobIDDisplay: "R000000123",
+  cfdisplay_fullpart: "Full time",
+  cfval_CST_RBS_BRAND: "",
+  cfdisplay_CST_RBS_BRAND: "RBS",
+  cfdisplay_WD_ExternalPostingStartDate: new Date(),
+  cfdisplay_WD_ExternalPostingEndDate: new Date(Date.now() + 12096e5),
+  cfval_CST_RBS_JOB_FUNC_A: "JF19",
+  cfdisplay_CST_RBS_JOB_FUNC_A: "Technology"
+};
+job["active?"] = true;
 module.exports = job;
